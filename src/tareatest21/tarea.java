@@ -2,13 +2,13 @@ package tareatest21;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Operaciones {
+public class tarea {
 
 	public static void main(String[] args) {
-		new Operaciones();
+		new tarea();
 	}
 
-	public Operaciones() {
+	public tarea() {
 
 	}
 
@@ -17,7 +17,7 @@ public class Operaciones {
 	// 1
 	public static int addFirstNumbersException(int n) throws ArithmeticException {
 		if (n < 0)
-			throw new ArithmeticException("No ingresar nÃºmeros menores a 0");
+			throw new ArithmeticException("No ingresar números menores a 0");
 		if (n == 0)
 			return 0;
 		else
