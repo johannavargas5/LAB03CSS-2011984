@@ -46,13 +46,13 @@ class numeroDiez {
    */
   @Test
   public void add_listMultipleElements_returnsSumOfElements() {
+    // Se comprueba que el ArrayList no sea nulo antes de añadirlo al ArrayList
     List<Integer> numbers = new ArrayList<>();
     numbers.add(1);
     numbers.add(2);
     numbers.add(3);
     int expectedSum = 6;
 
-    // Se comprueba que el elemento no sea nulo antes de añadirlo al ArrayList
     if (numbers != null) {
       int actualSum = tarea.add(numbers);
 
