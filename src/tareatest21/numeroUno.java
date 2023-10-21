@@ -30,7 +30,7 @@ public void addFirstNumbersException_zero_returnsZero() {
 
 
  @Test
- public   void testAddFirstNumbersExceptionNegative() {
+ public void testAddFirstNumbersExceptionNegative() {
         assertThrows(ArithmeticException.class, () -> {
             ejemplo.addFirstNumbersException(-3);
         });
