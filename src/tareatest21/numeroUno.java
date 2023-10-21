@@ -11,17 +11,17 @@ public void addFirstNumbersException_zero_returnsZero() {
   int n = 0;
   int expectedSum = 0;
 
-  int actualSum = ejemplo.addFirstNumbersException(n);
+  int actualSum = tarea.addFirstNumbersException(n);
 
   assertEquals(expectedSum, actualSum);
 }
 
 @Test
 public void addFirstNumbersException_zero_returnsZero() {
-  int n = 1;
-  int expectedSum = ;
+  int n = 2;
+  int expectedSum = 3;
 
-  int actualSum = ejemplo.addFirstNumbersException(n);
+  int actualSum = tarea.addFirstNumbersException(n);
 
   assertEquals(expectedSum, actualSum);
 }
@@ -32,6 +32,6 @@ public void addFirstNumbersException_zero_returnsZero() {
  @Test
  public void testAddFirstNumbersExceptionNegative() {
         assertThrows(ArithmeticException.class, () -> {
-            ejemplo.addFirstNumbersException(-3);
+            tarea.addFirstNumbersException(-3);
         });
     }
