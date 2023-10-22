@@ -9,8 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+<<<<<<< HEAD
 class NumeroDiez {
 
+=======
+class numeroDiez {
+//Diego 7w7
+>>>>>>> ecd2e5f064ca80312130c8a42a09531a34b4b89a
   @TestFactory
   // Prueba que el método add() lance una excepción NullPointerException cuando la lista es nula.
   Stream<DynamicTest> add_nullList_throwsNullPointerException() {
