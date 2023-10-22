@@ -6,7 +6,6 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 @TestInstance(Lifecycle.PER_CLASS)
-//Diego 7w7
 class numeroNueve {
 
   // Prueba que el método `divTwoNumbers()` lance una excepción `IllegalArgumentException` cuando el divisor es 0.

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class NumeroDos {
+class numeroDos {
 
     @Test
     // Prueba para verificar si la función findHighestNumber encuentra el número más alto en el caso 1

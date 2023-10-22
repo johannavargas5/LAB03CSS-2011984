@@ -6,7 +6,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class NumeroOcho {
+public class numeroOcho {
 
     @Test
     // Prueba el método removeDuplicates para eliminar elementos duplicados de una lista.

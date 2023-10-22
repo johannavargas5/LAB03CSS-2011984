@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 
-public class NumeroUno {
+public class numeroUno {
 
     @Test
     // Prueba para verificar si se suman los primeros números positivos correctamente

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class NumeroCinco {
+class numeroCinco {
 
     public static String reverseWord(String str) {
 
@@ -32,7 +32,7 @@ class NumeroCinco {
         // Salida esperada: ""
         String str = "";
         String resultadoEsperado = "";
-        String resultadoObtenido = NumeroCinco.reverseWord(str);
+        String resultadoObtenido = numeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 
@@ -43,7 +43,7 @@ class NumeroCinco {
         // Salida esperada: "aloh"
         String str = "hola";
         String resultadoEsperado = "aloh";
-        String resultadoObtenido = NumeroCinco.reverseWord(str);
+        String resultadoObtenido = numeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 
@@ -54,7 +54,7 @@ class NumeroCinco {
         // Salida esperada: "aloh odnum"
         String str = "hola mundo";
         String resultadoEsperado = "aloh odnum";
-        String resultadoObtenido = NumeroCinco.reverseWord(str);
+        String resultadoObtenido = numeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 
@@ -65,7 +65,7 @@ class NumeroCinco {
         // Salida esperada: "  aloh odnum  "
         String str = "  hola mundo  ";
         String resultadoEsperado = "  aloh odnum  ";
-        String resultadoObtenido = NumeroCinco.reverseWord(str);
+        String resultadoObtenido = numeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 }

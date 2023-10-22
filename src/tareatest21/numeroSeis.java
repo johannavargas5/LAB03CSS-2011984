@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class NumeroSeis {
+class numeroSeis {
 
     @Test
     // Prueba para comparar dos números iguales
