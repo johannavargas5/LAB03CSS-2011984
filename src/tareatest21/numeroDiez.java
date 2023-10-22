@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 class numeroDiez {
+	
   @TestFactory
   // Prueba que el método add() lance una excepción NullPointerException cuando la lista es nula.
   Stream<DynamicTest> add_nullList_throwsNullPointerException() {
