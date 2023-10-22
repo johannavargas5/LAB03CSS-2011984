@@ -2,62 +2,96 @@ package tareatest21;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 class numeroDiez {
 
-  /**
-   * Prueba que el método lance una excepción NullPointerException cuando la lista es nula.
-   */
-  @Test
-  public void add_nullList_throwsNullPointerException() {
-    assertThrows(NullPointerException.class, () -> tarea.add(null));
+  @TestFactory
+  // Prueba que el método add() lance una excepción NullPointerException cuando la lista es nula.
+  Stream<DynamicTest> add_nullList_throwsNullPointerException() {
+    return Stream.of(
+        DynamicTest.dynamicTest("Null list", () -> assertThrows(NullPointerException.class, () -> tarea.add(null))),
+        DynamicTest.dynamicTest("Empty list", () -> assertThrows(NullPointerException.class, () -> tarea.add(new ArrayList<>())))
+    );
   }
 
-  /**
-   * Prueba que el método devuelva cero cuando la lista está vacía.
-   */
-  @Test
-  public void add_emptyList_returnsZero() {
-    List<Integer> numbers = new ArrayList<>();
-    int expectedSum = 0;
+  @TestFactory
+  // Prueba que el método add() devuelva el elemento de la lista cuando la lista tiene un elemento.
+  Stream<DynamicTest> add_listMultipleElements_returnsSumOfElements() {
+    return Stream.of(
+        DynamicTest.dynamicTest("List with one element", () -> {
+          List<Integer> numbers = new ArrayList<>();
+          numbers.add(1);
 
-    int actualSum = tarea.add(numbers);
+          int expectedSum = 1;
+          int actualSum = tarea.add(numbers);
 
-    assertEquals(expectedSum, actualSum);
+          assertEquals(expectedSum, actualSum);
+        }),
+        DynamicTest.dynamicTest("List with multiple elements", () -> {
+          List<Integer> numbers = new ArrayList<>();
+          numbers.add(1);
+          numbers.add(2);
+          numbers.add(3);
+
+          int expectedSum = 6;
+          int actualSum = tarea.add(numbers);
+
+          assertEquals(expectedSum, actualSum);
+        }),
+        DynamicTest.dynamicTest("List with negative elements", () -> {
+          List<Integer> numbers = new ArrayList<>();
+          numbers.add(-1);
+          numbers.add(-2);
+          numbers.add(-3);
+
+          int expectedSum = -6;
+          int actualSum = tarea.add(numbers);
+
+          assertEquals(expectedSum, actualSum);
+        })
+    );
   }
 
-  /**
-   * Prueba que el método devuelva el elemento de la lista cuando la lista tiene un elemento.
-   */
-  @Test
-  public void add_listOneElement_returnsElement() {
-    List<Integer> numbers = new ArrayList<>();
-    numbers.add(1);
-    int expectedSum = 1;
+  @TestFactory
+  // Prueba que el método add() lance una excepción NullPointerException cuando la lista tiene elementos nulos.
+  Stream<DynamicTest> add_listWithNullElements_throwsNullPointerException() {
+    return Stream.of(
+        DynamicTest.dynamicTest("List with one null element", () -> {
+          List<Integer> numbers = new ArrayList<>();
+          numbers.add(null);
 
-    int actualSum = tarea.add(numbers);
+          assertThrows(NullPointerException.class, () -> tarea.add(numbers));
+        }),
+        DynamicTest.dynamicTest("List with multiple null elements", () -> {
+          List<Integer> numbers = new ArrayList<>();
+          numbers.add(null);
+          numbers.add(null);
+          numbers.add(null);
 
-    assertEquals(expectedSum, actualSum);
+          assertThrows(NullPointerException.class, () -> tarea.add(numbers));
+        })
+    );
   }
 
-  /**
-   * Prueba que el método devuelva la suma de los elementos de la lista cuando la lista tiene varios elementos.
-   */
-  @Test
-  public void add_listMultipleElements_returnsSumOfElements() {
-    // Se comprueba que el ArrayList no sea nulo antes de añadirlo al ArrayList
-    List<Integer> numbers = new ArrayList<>();
-    numbers.add(1);
-    numbers.add(2);
-    numbers.add(3);
-    int expectedSum = 6;
+  @TestFactory
+  //Prueba que el método add() lance una excepción NullPointerException cuando la lista tiene todos sus elementos nulos.
+  Stream<DynamicTest> add_listWithAllElementsNull_throwsNullPointerException() {
+    return Stream.of(
+      DynamicTest.dynamicTest("List with all null elements", () -> {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(null);
+        numbers.add(null);
+        numbers.add(null);
 
-    if (numbers != null) {
-      int actualSum = tarea.add(numbers);
-
-      assertEquals(expectedSum, actualSum);
-    }
+        assertThrows(NullPointerException.class, () -> tarea.add(numbers));
+      })
+    );
   }
 
 }
