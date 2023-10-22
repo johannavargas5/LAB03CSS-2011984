@@ -1,47 +1,44 @@
 package tareatest21;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import org.junit.Test;
 
-import org.junit.jupiter.api.Test;
+public class numeroUno {
 
-class numeroUno {
+    @Test
+    public void testAddFirstNumbersExceptionPositive() {
+        int result = addFirstNumbersException(5);
+        assertEquals(15, result); // Asegura que la suma es correcta
+    }
 
-	@Test
-public void addFirstNumbersException_zero_returnsZero11() {
-  int n = 0;
-  int expectedSum = 0;
+    @Test
+    public void testAddFirstNumbersExceptionZero() {
+        int result = addFirstNumbersException(0);
+        assertEquals(0, result); // Asegura que el resultado es 0
+    }
 
-  int actualSum = tarea.addFirstNumbersException(n);
+    @Test
+    public void testAddFirstNumbersExceptionNegative() {
+        try {
+            int result = addFirstNumbersException(-2);
+            fail("Debería haber lanzado una excepción ArithmeticException");
+        } catch (ArithmeticException e) {
+            assertEquals("No ingresar números menores a 0", e.getMessage()); // Asegura que el mensaje de excepción sea el esperado
+        }
+    }
 
-  assertEquals(expectedSum, actualSum);
-}
+    @Test
+    public void testAddFirstNumbersExceptionLargeInput() {
+        int result = addFirstNumbersException(1000);
+        assertEquals(500500, result); // Asegura que la suma sea correcta para un número grande
+    }
 
-@Test
-public void addFirstNumbersException_zero_returnsZero1() {
-  int n = 2;
-  int expectedSum = 3;
-
-  int actualSum = tarea.addFirstNumbersException(n);
-
-  assertEquals(expectedSum, actualSum);
-}
-
-@Test
-public void addFirstNumbersException_zero_returnsZero() {
-  int n = 4;
-  int expectedSum = 10;
-
-  int actualSum = tarea.addFirstNumbersException(n);
-
-  assertEquals(expectedSum, actualSum);
-}
-
-
-
-	@Test
-public void testAddFirstNumbersExceptionNegative() {
-    assertThrows(ArithmeticException.class, () -> {
-        tarea.addFirstNumbersException(-3);
-    });
-}
+    public static int addFirstNumbersException(int n) throws ArithmeticException {
+        if (n < 0)
+            throw new ArithmeticException("No ingresar números menores a 0");
+        if (n == 0)
+            return 0;
+        else
+            return n + addFirstNumbersException(n - 1);
+    }
 }
