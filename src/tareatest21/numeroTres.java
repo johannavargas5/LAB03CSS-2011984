@@ -1,46 +1,36 @@
 package tareatest21;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
-class numeroTres{
-	@Test
-    public void testFindMaxNumber_arrayVacio() {
-        // Entrada: arr = []
-        // Salida esperada: -1
-        int[] arr = {};
-        int resultadoEsperado = -1;
-        int resultadoObtenido = tarea.findMaxNumber(arr);
-        assertEquals(resultadoEsperado, resultadoObtenido);
+public class numeroTres {
+
+    @Test
+    // Entrada n igual a 0 y como resultado sería 0.
+    
+    public void testCalculateCubeWithZero() {
+        int result = tarea.calculateCube(0);
+        assertEquals(0, result);
     }
 
     @Test
-    public void testFindMaxNumber_unElemento() {
-        // Entrada: arr = [1]
-        // Salida esperada: 1
-        int[] arr = {1};
-        int resultadoEsperado = 1;
-        int resultadoObtenido = tarea.findMaxNumber(arr);
-        assertEquals(resultadoEsperado, resultadoObtenido);
+    // Entrada n igual a un número positivo (5) y como resultado sería 125.
+    public void testCalculateCubeWithPositiveNumber() {
+        int result = tarea.calculateCube(5);
+        assertEquals(125, result);
     }
 
     @Test
-    public void testFindMaxNumber_variosElementos() {
-        //Entrada: arr = [1, 2, 3]
-        //Salida esperada: 3
-        int[] arr = {1, 2, 3};
-        int resultadoEsperado = 3;
-        int resultadoObtenido = tarea.findMaxNumber(arr);
-        assertEquals(resultadoEsperado, resultadoObtenido);
+    // Entrada n igual a un número negativo (-3) y como resultado sería -27.
+    public void testCalculateCubeWithNegativeNumber() {
+        int result = tarea.calculateCube(-3);
+        assertEquals(-27, result);
     }
 
     @Test
-    public void testFindMaxNumber_todosLosElementosIguales() {
-        //Entrada: arr = [1, 1, 1]
-        //Salida esperada: 1
-        int[] arr = {1, 1, 1};
-        int resultadoEsperado = 1;
-        int resultadoObtenido = tarea.findMaxNumber(arr);
-        assertEquals(resultadoEsperado, resultadoObtenido);
+    // Entrada n igual a Integer.MAX_VALUE (el valor máximo de un entero en Java) y como resultado sería el cubo de Integer.MAX_VALUE.
+    public void testCalculateCubeWithMaxValue() {
+        int result = tarea.calculateCube(Integer.MAX_VALUE);
+        assertEquals(2147483647, result);
     }
 }
