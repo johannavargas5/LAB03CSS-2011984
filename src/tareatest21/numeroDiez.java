@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-class numeroDiez {
+class NumeroDiez {
 
   @TestFactory
   // Prueba que el método add() lance una excepción NullPointerException cuando la lista es nula.
   Stream<DynamicTest> add_nullList_throwsNullPointerException() {
     return Stream.of(
-        DynamicTest.dynamicTest("Null list", () -> assertThrows(NullPointerException.class, () -> tarea.add(null))),
-        DynamicTest.dynamicTest("Empty list", () -> assertThrows(NullPointerException.class, () -> tarea.add(new ArrayList<>())))
+        DynamicTest.dynamicTest("Null list", () -> assertThrows(NullPointerException.class, () -> numeroDiez.add(null))),
+        DynamicTest.dynamicTest("Empty list", () -> assertThrows(NullPointerException.class, () -> numeroDiez.add(new ArrayList<>())))
     );
   }
 
@@ -29,7 +29,7 @@ class numeroDiez {
           numbers.add(1);
 
           int expectedSum = 1;
-          int actualSum = tarea.add(numbers);
+          int actualSum = numeroDiez.add(numbers);
 
           assertEquals(expectedSum, actualSum);
         }),
@@ -40,7 +40,7 @@ class numeroDiez {
           numbers.add(3);
 
           int expectedSum = 6;
-          int actualSum = tarea.add(numbers);
+          int actualSum = numeroDiez.add(numbers);
 
           assertEquals(expectedSum, actualSum);
         }),
@@ -51,7 +51,7 @@ class numeroDiez {
           numbers.add(-3);
 
           int expectedSum = -6;
-          int actualSum = tarea.add(numbers);
+          int actualSum = numeroDiez.add(numbers);
 
           assertEquals(expectedSum, actualSum);
         })
@@ -66,7 +66,7 @@ class numeroDiez {
           List<Integer> numbers = new ArrayList<>();
           numbers.add(null);
 
-          assertThrows(NullPointerException.class, () -> tarea.add(numbers));
+          assertThrows(NullPointerException.class, () -> numeroDiez.add(numbers));
         }),
         DynamicTest.dynamicTest("List with multiple null elements", () -> {
           List<Integer> numbers = new ArrayList<>();
@@ -74,7 +74,7 @@ class numeroDiez {
           numbers.add(null);
           numbers.add(null);
 
-          assertThrows(NullPointerException.class, () -> tarea.add(numbers));
+          assertThrows(NullPointerException.class, () -> numeroDiez.add(numbers));
         })
     );
   }
@@ -89,7 +89,7 @@ class numeroDiez {
         numbers.add(null);
         numbers.add(null);
 
-        assertThrows(NullPointerException.class, () -> tarea.add(numbers));
+        assertThrows(NullPointerException.class, () -> numeroDiez.add(numbers));
       })
     );
   }

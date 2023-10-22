@@ -6,9 +6,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class numeroOcho {
+public class NumeroOcho {
 
     @Test
+    // Prueba el método removeDuplicates para eliminar elementos duplicados de una lista.
     public void testRemoveDuplicates() {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(1);
@@ -29,6 +30,7 @@ public class numeroOcho {
     }
 
     @Test
+    // Prueba el método removeDuplicates cuando se aplica a una lista vacía.
     public void testRemoveDuplicatesWithEmptyList() {
         List<Integer> numbers = new ArrayList<>();
 
@@ -38,11 +40,13 @@ public class numeroOcho {
     }
 
     @Test
+    // Prueba el método removeDuplicates cuando se aplica a una lista nula.
     public void testRemoveDuplicatesWithNullList() {
         assertThrows(NullPointerException.class, () -> tarea.removeDuplicates(null));
     }
 
     @Test
+    // Prueba el método removeDuplicates cuando la lista contiene elementos nulos.
     public void testRemoveDuplicatesWithNullElements() {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(1);

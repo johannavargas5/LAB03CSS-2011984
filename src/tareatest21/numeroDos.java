@@ -6,33 +6,29 @@ import org.junit.jupiter.api.Test;
 
 class numeroDos {
 
-	// Test 1
+	@Test
+    public void testFindHighestNumberCase1() {
+        int result = tarea.findHighestNumber(3, 5, 9);
+        assertEquals(9, result);
+    }
+
     @Test
-    public void testFindHighestNumberException() {
+    public void testFindHighestNumberCase2() {
+        int result = tarea.findHighestNumber(10, 5, 1);
+        assertEquals(10, result);
+    }
+
+    @Test
+    public void testFindHighestNumberCase3() {
+        int result = tarea.findHighestNumber(4, 12, 8);
+        assertEquals(12, result);
+    }
+
+    @Test
+    public void testFindHighestNumberCase4() {
         assertThrows(IllegalArgumentException.class, () -> {
-            tarea.findHighestNumber(1, 2, 2);
+            tarea.findHighestNumber(4, 4, 4);
         });
-    }
-
-    // Test 2
-    @Test
-    public void testFindHighestNumber() {
-        int result = tarea.findHighestNumber(5, 2, 1);
-        assertEquals(5, result);
-    }
-
-    // Test 3
-    @Test
-    public void testFindHighestNumberEqual() {
-        int result = tarea.findHighestNumber(4, 4, 4);
-        assertEquals(4, result);
-    }
-
-	//Test 4
-    @Test 
-    public void testFindHighestNumberLargeNumbers() {
-        int result = tarea.findHighestNumber(1000, 500, 750);
-        assertEquals(1000, result);
     }
 }
 

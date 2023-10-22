@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class numeroCinco {
+class NumeroCinco {
 
     public static String reverseWord(String str) {
 
@@ -18,48 +18,54 @@ class numeroCinco {
             sb.reverse();
 
             result.append(sb);
-            result.append(" ");
+            if (tokenizer.hasMoreTokens()) {
+                result.append(" ");
+            }
         }
         return result.toString();
     }
 
     @Test
     public void testReverseWord_stringVacio() {
+        // Prueba cuando la cadena está vacía
         // Entrada: str = ""
         // Salida esperada: ""
         String str = "";
         String resultadoEsperado = "";
-        String resultadoObtenido = numeroCinco.reverseWord(str);
+        String resultadoObtenido = NumeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 
     @Test
     public void testReverseWord_unaPalabra() {
+        // Prueba cuando hay una sola palabra en la cadena
         // Entrada: str = "hola"
         // Salida esperada: "aloh"
         String str = "hola";
         String resultadoEsperado = "aloh";
-        String resultadoObtenido = numeroCinco.reverseWord(str);
+        String resultadoObtenido = NumeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 
     @Test
     public void testReverseWord_variasPalabras() {
+        // Prueba cuando hay varias palabras en la cadena
         // Entrada: str = "hola mundo"
-        // Salida esperada: "aloh dnuom"
+        // Salida esperada: "aloh odnum"
         String str = "hola mundo";
-        String resultadoEsperado = "aloh dnuom";
-        String resultadoObtenido = numeroCinco.reverseWord(str);
+        String resultadoEsperado = "aloh odnum";
+        String resultadoObtenido = NumeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 
     @Test
     public void testReverseWord_conEspaciosEnBlanco() {
+        // Prueba cuando la cadena tiene espacios en blanco al inicio y al final
         // Entrada: str = "  hola mundo  "
-        // Salida esperada: "  aloh dnuom  "
+        // Salida esperada: "  aloh odnum  "
         String str = "  hola mundo  ";
-        String resultadoEsperado = "  aloh dnuom  ";
-        String resultadoObtenido = numeroCinco.reverseWord(str);
+        String resultadoEsperado = "  aloh odnum  ";
+        String resultadoObtenido = NumeroCinco.reverseWord(str);
         assertEquals(resultadoEsperado, resultadoObtenido);
     }
 }
