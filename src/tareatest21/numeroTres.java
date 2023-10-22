@@ -7,6 +7,7 @@ public class numeroTres {
 
     @Test
     // Entrada n igual a 0 y como resultado sería 0.
+    
     public void testCalculateCubeWithZero() {
         int result = tarea.calculateCube(0);
         assertEquals(0, result);
